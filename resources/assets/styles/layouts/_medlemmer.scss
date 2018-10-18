@@ -1,0 +1,97 @@
+.medlemmer {
+  &__medlem {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border-right: 5px;
+    margin: 10px;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    &__innhold {
+      padding: 15px;
+      margin: 0;
+
+      strong {
+        font-weight: bold;
+      }
+
+      a {
+        display: inline-block;
+        margin: 3px 0;
+        position: relative;
+        text-decoration: none;
+        color: #000;
+        padding-bottom: 5px;
+
+        &[href^='mailto'] {
+          &::before {
+            @extend .faclass;
+
+            content: $fa-var-envelope;
+            color: rgba(0, 0, 0, 0.7);
+            font-size: 1.2rem;
+            margin-right: 5px;
+            margin-bottom: 0;
+            display: inline-block;
+            transition: 0.2s all ease-in-out;
+          }
+        }
+
+        &[href^='tel'] {
+          &::before {
+            @extend .faclass;
+
+            content: $fa-var-phone;
+            color: rgba(0, 0, 0, 0.7);
+            font-size: 1.2rem;
+            margin-right: 5px;
+            margin-bottom: 0;
+            display: inline-block;
+            transition: 0.2s all ease-in-out;
+          }
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          left: 50%;
+          right: 50%;
+          height: 2px;
+          background: #000;
+          position: absolute;
+          bottom: 0;
+          transition: 0.2s all ease-in-out;
+        }
+
+        &:hover,
+        &:focus {
+          &::before {
+            color: #000;
+          }
+
+          &::after {
+            left: 30px;
+            right: 5px;
+          }
+        }
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  @include breakpoint($sm) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__medlem {
+      flex: 0 1 265px;
+    }
+  }
+}

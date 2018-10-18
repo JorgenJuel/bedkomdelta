@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="408px" height="126px" viewBox="0 0 408 126" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>deltalogo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Student" transform="translate(-43.000000, -99.000000)" fill="#FFFFFF">
+            <g id="Header">
+                <g id="deltalogo" transform="translate(43.000000, 99.000000)">
+                    <path d="M46.7670937,45.5924283 C46.7670937,45.5924283 70.8871766,45.4128635 71.2711242,44.9836597 C94.8495929,18.57595 94.4933829,4.56113364 158.288535,101.175774 C7.14020045,101.359718 158.288535,101.175774 6.08762935,101.175774 C-1.76504745,102.390391 -2.28914318,123.95715 6.08762935,125.187826 C-2.58403828,125.187826 186.249554,125.462283 186.249554,125.462283 C192.437971,117.08551 186.249554,103.241499 186.249554,103.241499 C99.3737508,-20.7385296 100.494936,-24.014493 46.7670937,45.5909684 L46.7670937,45.5924283 Z" id="Shape"></path>
+                    <text id="BedKom-Delta" font-family="Arial-BoldMT, Arial" font-size="48" font-weight="bold">
+                        <tspan x="214" y="69">BedKom</tspan>
+                        <tspan x="214" y="122">Delta</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

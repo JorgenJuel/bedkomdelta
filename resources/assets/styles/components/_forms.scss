@@ -1,0 +1,37 @@
+/** Search form */
+// TODO: .search-form {}
+// TODO: .search-form label {}
+// TODO: .search-form .search-field {}
+// TODO: .search-form .search-submit {}
+
+.gform_wrapper {
+  max-width: 800px;
+  margin: 60px auto;
+
+  .ginput_container {
+    input {
+      &:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]) {
+        padding: 6px 10px;
+        border: 2px solid $gronn;
+        width: 100%;
+        font-size: 1.2rem;
+        line-height: 1.2;
+      }
+    }
+
+    textarea {
+      padding: 6px 10px;
+      border: 2px solid $gronn;
+      font-size: 1.2rem;
+      line-height: 1.2;
+    }
+  }
+
+  .gform_footer {
+    input.button {
+      @extend .knapp;
+
+      float: right;
+    }
+  }
+}

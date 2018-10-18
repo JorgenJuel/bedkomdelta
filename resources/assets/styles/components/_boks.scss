@@ -1,0 +1,38 @@
+.boks {
+  background: #fff;
+  padding: 15px;
+  box-sizing: border-box;
+  color: #000;
+  margin-bottom: 30px;
+  text-decoration: none;
+
+  &--invertert {
+    color: #fff;
+  }
+
+  @include breakpoint($sm) {
+    width: 33%;
+    width: calc(100% / 3 - 30px);
+    margin: 0 15px 30px;
+    padding: 25px;
+
+    &:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+
+  &__bilde {
+    margin-bottom: 5px;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+}

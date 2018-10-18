@@ -1,0 +1,88 @@
+.fanemeny {
+  &__liste {
+    display: flex;
+    margin: 0;
+    padding: 20px 0 0;
+    justify-content: center;
+  }
+
+  &__punkt {
+    list-style: none;
+    margin: 0 30px;
+  }
+
+  &__knapp {
+    color: #fff;
+    font-size: 20px;
+    line-height: 1.2em;
+    text-align: center;
+    display: block;
+    border: none;
+    background: #005000;
+    padding: 20px;
+    cursor: pointer;
+
+    @include breakpoint($sm) {
+      padding: 40px 60px;
+    }
+
+    &::before {
+      font-family: "FontAwesome";/* stylelint-disable */
+      display: block;
+      text-align: center;
+      margin: 0 auto 20px;
+      content: $fa-var-briefcase;
+      font-size: 3rem;
+      color: #fff;
+    }
+
+    &--aktiv {
+      background: #f7f7f7;
+      color: #4b4b4b;
+
+      &::before {
+        color: #4b4b4b
+      }
+    }
+
+    &--jobber {
+      &::before {
+        content: $fa-var-line-chart;
+      }
+    }
+
+    &--karrierer {
+      &::before {
+        content: $fa-var-building;
+      }
+    }
+  }
+}
+
+.faner {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s all ease-in-out;
+
+  &__fane {
+    display: none;
+
+    &--aktiv {
+      display: block;
+      transition: 0.3s all ease-in-out;
+    }
+
+    .faner--aktivert & {
+      position: absolute;
+      left: 0;
+      top: -100%;
+      display: block;
+      width: 100%;
+
+      &--aktiv {
+        top: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,157 @@
+.navigasjonsholder {
+  position: fixed;
+  top: 50%;
+  bottom: 50%;
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: $gronn;
+  transition: 0.3s all ease-in-out;
+
+  &--aktiv {
+    top: 0;
+    bottom: 0;
+  }
+
+  @include breakpoint($sm) {
+    position: static;
+    top: auto;
+    bottom: auto;
+    overflow: auto;
+    background: transparent;
+    margin-left: 20px;
+    flex: 1 1 auto;
+    max-width: 50%;
+    min-width: 340px;
+  }
+}
+
+.navigasjon {
+  @extend .flexholder;
+
+  list-style: none;
+  padding: 0;
+  flex-wrap: nowrap;
+  margin: 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  max-height: 100%;
+  overflow: auto;
+
+  @include breakpoint($sm) {
+    top: auto;
+    transform: none;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &__punkt {
+    display: block;
+    margin: 0.5rem;
+  }
+
+  &__lenke {
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 0.5rem 0;
+    font-family: "Arial bold", "Arial", arial, sans-serif;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+
+    &::before {
+      font-family: "FontAwesome";/* stylelint-disable */
+      display: block;
+      text-align: center;
+      margin: 0 auto 10px;
+      content: $fa-var-briefcase;
+      font-size: 3rem;
+      color: #fff;
+
+      .navigasjon__punkt--student & {
+        content: $fa-var-graduation-cap;
+      }
+
+      .navigasjon__punkt--bedkom & {
+        content: $fa-var-users;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      right: 50%;
+      background: #fff;
+      transition: .15s all ease-in-out;
+      height: 3px;
+    }
+
+    &:hover {
+      text-decoration: none;
+
+      &::before {
+        color: #177a17;
+      }
+
+      &::after {
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+}
+
+.mobilmeny {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: block;
+  background: $morkgronn;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.5);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 150;
+
+  &__linje {
+    width: 24px;
+    height: 3px;
+    position: absolute;
+    bottom: 13px;
+    right: 12px;
+    background: #fff;
+    display: block;
+    transform: rotate(0);
+    transition: 0.3s all ease-in-out;
+
+    &:nth-child(2) {
+      bottom: 23px;
+    }
+
+    &:nth-child(3) {
+      bottom: 33px;
+    }
+
+    .mobilmeny--aktiv & {
+      transform: rotate(45deg);
+      bottom: 23px;
+      right: 13px;
+
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  @include breakpoint($sm) {
+    display: none;
+  }
+}

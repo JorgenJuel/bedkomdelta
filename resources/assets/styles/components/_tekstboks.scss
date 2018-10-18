@@ -1,0 +1,11 @@
+.tekstbokser {
+  display: flex;
+
+  &__boks {
+    border: 2px solid $gronn;
+    padding: 6px 12px;
+    color: #000;
+    text-decoration: none;
+    margin: 0 10px 10px;
+  }
+}

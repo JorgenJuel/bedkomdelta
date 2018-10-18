@@ -1,0 +1,79 @@
+.sidetopp {
+  @extend .holder;
+}
+
+.hovedinnhold {
+  background: #fff;
+  padding: 40px 0;
+}
+
+.container {
+  @extend .holder;
+
+  color: #000;
+}
+
+.navigeringsknapper {
+  &__liste {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0 -10px;
+  }
+
+  &__element {
+    list-style: none;
+    margin: 0 10px;
+  }
+
+  &__lenke {
+    display: block;
+    border: 1px solid $gronn;
+    padding: 6px 10px;
+    color: #000;
+    text-decoration: none;
+    background: transparent;
+    font-size: 1.2rem;
+    line-height: 1.2;
+
+    &--aktiv {
+      background: $gronn;
+      color: #fff;
+    }
+  }
+}
+
+.tekstinnhold {
+  font-size: 1.1rem;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  &__intro {
+    font-size: 1.3rem;
+    margin-bottom: 0.5em;
+  }
+
+  h1 {
+    font-size: 2em;
+    line-height: 1.2;
+    color: #000;
+    margin: 0.5em 0 1em;
+  }
+
+  p {
+    font-size: 1em;
+    margin-bottom: 1em;
+    margin-top: 0;
+  }
+
+  footer {
+    margin-top: 2em;
+    border-top: 1px solid $gronn;
+    padding-top: 0.5em;
+
+    p {
+      margin-bottom: 0.3em;
+    }
+  }
+}

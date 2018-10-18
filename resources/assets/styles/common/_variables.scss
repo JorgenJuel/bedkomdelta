@@ -1,0 +1,22 @@
+/** Colors */
+$brand-primary:         #525ddc;
+
+/** Box Model  */
+$spacer:                2rem;
+
+$morkgronn: #005000;
+$gronn: #006100;
+$lysgronn: #157015;
+$fa-font-size-base: 16px;
+
+$sm: 700px;
+$md: 1000px;
+
+.faclass {
+  font-family: "FontAwesome";/* stylelint-disable */
+  display: block;
+  text-align: center;
+  margin: 0 auto 20px;
+  font-size: 3rem;
+  color: #fff;
+}

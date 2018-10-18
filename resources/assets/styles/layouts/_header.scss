@@ -1,0 +1,62 @@
+// TODO: .banner .nav li {}
+// TODO: .banner .nav a {}
+
+.topptekst {
+  background: $gronn;
+
+  .flexholder {
+    @include breakpoint($sm) {
+      align-items: flex-end;
+      justify-content: space-between;
+      width: 100%;
+      width: calc(100% - 40px);
+      max-width: 1200px;
+      margin: 0 auto;
+      box-sizing: border-box;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  > .flexholder {
+    @include breakpoint($sm) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  }
+}
+
+.merke {
+  background: $morkgronn;
+  color: #fff;
+
+  &__lenke {
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.3em;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+  }
+}
+
+.logo {
+  max-width: 400px;
+  text-indent: -999999;
+  font-size: 0;
+  margin: 20px auto;
+  display: block;
+
+  @include breakpoint($sm) {
+    margin: 20px 0;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
