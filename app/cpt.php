@@ -120,3 +120,53 @@ function fagtype_tax() {
 
 }
 add_action( 'init', 'fagtype_tax', 0 );
+
+// Register Custom Post Type
+function emne_cpt() {
+
+	$labels = array(
+		'name'                  => _x( 'Emner', 'Post Type General Name', 'sage' ),
+		'singular_name'         => _x( 'Emne', 'Post Type Singular Name', 'sage' ),
+		'menu_name'             => __( 'Emner', 'sage' ),
+		'name_admin_bar'        => __( 'Emner', 'sage' ),
+		'archives'              => __( 'Emnearkiv', 'sage' ),
+		'attributes'            => __( 'Emneattributter', 'sage' ),
+		'parent_item_colon'     => __( 'Foreldreemne', 'sage' ),
+		'all_items'             => __( 'Alle emner', 'sage' ),
+		'add_new_item'          => __( 'Legg til nytt emne', 'sage' ),
+		'add_new'               => __( 'Legg til nytt', 'sage' ),
+		'new_item'              => __( 'Nytt emne', 'sage' ),
+		'edit_item'             => __( 'Rediger emne', 'sage' ),
+		'update_item'           => __( 'Oppdater emne', 'sage' ),
+		'view_item'             => __( 'Vis emne', 'sage' ),
+		'view_items'            => __( 'Vis emner', 'sage' ),
+		'search_items'          => __( 'Søk blant emner', 'sage' ),
+		'not_found'             => __( 'Ingen emner funnet', 'sage' ),
+		'not_found_in_trash'    => __( 'Ingen funnet i papirkurven', 'sage' ),
+		'items_list'            => __( 'Emneliste', 'sage' ),
+		'items_list_navigation' => __( 'Emnelistenavigasjon', 'sage' ),
+		'filter_items_list'     => __( 'Filtrer emneliste', 'sage' ),
+	);
+	$args = array(
+		'label'                 => __( 'Emne', 'sage' ),
+		'description'           => __( 'Emne', 'sage' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'menu_icon'             => 'dashicons-category',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => false,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+	);
+	register_post_type( 'emne', $args );
+
+}
+add_action( 'init', 'emne_cpt', 0 );

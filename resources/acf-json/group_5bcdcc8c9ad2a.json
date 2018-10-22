@@ -1,0 +1,156 @@
+{
+    "key": "group_5bcdcc8c9ad2a",
+    "title": "Emner (CPT)",
+    "fields": [
+        {
+            "key": "field_5bcdcfaa681d2",
+            "label": "Fullt navn",
+            "name": "fullt_navn",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5bcdcc9ad164b",
+            "label": "Kortnavn",
+            "name": "kortnavn",
+            "type": "text",
+            "instructions": "Eks RingMod",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5bcdcca7d164c",
+            "label": "Fagkode",
+            "name": "fagkode",
+            "type": "text",
+            "instructions": "Eks MA3201",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5bcdcdacab870",
+            "label": "Nødvendige fag",
+            "name": "nodvendige_fag",
+            "type": "relationship",
+            "instructions": "Fag som er nødvendige for å ta dette faget",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "emne"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "id"
+        },
+        {
+            "key": "field_5bcdcf49ab871",
+            "label": "Anbefalte fag",
+            "name": "anbefalte_fag",
+            "type": "relationship",
+            "instructions": "Fag som er lurt å ta, men ikke absolutt nødvendig",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "emne"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "id"
+        },
+        {
+            "key": "field_5bcdcf62ab872",
+            "label": "Lure fag",
+            "name": "lure_fag",
+            "type": "relationship",
+            "instructions": "Fag som gir noe fortrinn, men på ingen måte nødvendig",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "emne"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "id"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "emne"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1540214716
+}

@@ -23,8 +23,8 @@ $query = new WP_Query([
           <a href="{{ get_the_permalink() }}" class="navigeringsknapper__lenke {{ get_the_id() === $post_id ? 'navigeringsknapper__lenke--aktiv' : null}}">
             {{ get_the_title() }}
           </a>
-        </li>
         @endwhile
+        </li>
         @php wp_reset_postdata(); @endphp
       </ul>
     </nav>
@@ -48,7 +48,5 @@ $query = new WP_Query([
       <p class="tekstinnhold__oppdatert"><strong>Sist endret:</strong> <time class="updated" datetime="{{ get_post_time('c', true) }}">{{ get_the_date() }}</time></p>
     </footer>
   </article>
-  <header>
-</  article>
-  </header>
+</article>
 
