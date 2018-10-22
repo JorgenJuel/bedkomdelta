@@ -33,7 +33,7 @@ task('pull', function() {
 });
 
 // Build the files locally
-task('build', 'yarn run build:production')->local();
+task('build', 'yarn run build')->local();
 
 // Upload the dist folder
 task('dist', function() {

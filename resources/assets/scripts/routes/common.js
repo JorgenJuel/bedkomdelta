@@ -3,7 +3,6 @@ export default {
 
     function toggleFane(e) {
       e.preventDefault();
-      console.log("Aktiv", aktivKnapp, "this", this);
       if(aktivKnapp === this) {
         // Do nothing, aktiv is the same
         return
