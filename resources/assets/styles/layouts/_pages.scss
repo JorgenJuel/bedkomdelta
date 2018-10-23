@@ -54,6 +54,33 @@
     margin-bottom: 0.5em;
   }
 
+  &__sideboks {
+    background: $gronn;
+    padding: 20px;
+    color: #fff;
+
+    @media (min-width: 1024px) {
+      float: right;
+      margin-left: 20px;
+      margin-bottom: 20px;
+      position: sticky;
+      display: inline-block;
+      width: 300px;
+    }
+
+    a {
+      color: #fff;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+  }
+
   h1 {
     font-size: 2em;
     line-height: 1.2;

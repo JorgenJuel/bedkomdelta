@@ -33,10 +33,29 @@ $query = new WP_Query([
     <header>
       <h1>{{ get_the_title() }}</h1>
     </header>
+
     <div class="tekstinnhold__intro">
       {!! get_field('innledning') !!}
     </div>
+    
+    <aside class="tekstinnhold__sideboks">
+        @php $emner = get_field('anbefalte_emner'); @endphp
+        @if($emner)
+          <h3>{{ 'Anbefalte emner' }}</h3>
+          <ul>
+          @foreach($emner as $id)
+            <li>
+              <a href="{{ get_the_permalink($id) }}">
+                {!! get_the_title($id) !!}
+              </a>
+            </li>
+          @endforeach
+          </ul>
+        @endif
+    </aside>
+
     @php the_content() @endphp
+
     <footer>
       <p class="tekstinnhold__forfattere"><strong>Skrevet av:</strong>
       @php $i = 0; @endphp
