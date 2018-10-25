@@ -1,0 +1,38 @@
+.fagplan {
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+
+    td {
+      border: 2px solid $gronn;
+      padding: 5px;
+      border-bottom: none;
+      border-right: none;
+
+      &:last-child {
+        border-right: 2px solid $gronn;
+      }
+
+      a {
+        color: #000;
+      }
+    }
+
+    td[row-span="4"] {
+      border-bottom: 2px solid $gronn;
+    }
+
+    tr:first-child {
+      td[row-span="4"] {
+        border-bottom: none;
+      }
+    }
+
+    tr:last-child {
+      td {
+        border-bottom: 2px solid $gronn;
+      }
+    }
+  }
+}

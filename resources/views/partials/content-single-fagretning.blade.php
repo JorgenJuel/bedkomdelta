@@ -56,6 +56,37 @@ $query = new WP_Query([
 
     @php the_content() @endphp
 
+    @php $fagplan = get_field('fagplan') @endphp
+    @if($fagplan)
+    <div class="fagplan">
+      <table>
+        @php $oldSemester = "" @endphp
+        @foreach(['Høst' => 'hostfag', 'Vår' => 'varfag'] as $navn => $semesterNokkel)
+          @foreach([0,1,2,3] as $index)
+            <tr>
+              @if($oldSemester !== $semesterNokkel)
+                @php $oldSemester = $semesterNokkel @endphp
+                <td rowspan="4">{{ $navn }}</td>
+              @endif
+              @foreach($fagplan as $aar)
+                @php $semester = $aar[$semesterNokkel]; @endphp  
+                @if(array_key_exists($index, $semester))
+                @php $emne = $semester[$index]; @endphp
+                <td>
+                  <a href="{{ get_the_permalink($emne->ID ) }}">
+                    {{ get_field('fagkode', $emne->ID) }}
+                  </a>
+                </td>
+                @else
+                <td>Valgfritt emne</td>
+                @endif
+              @endforeach
+            </tr>
+          @endforeach
+        @endforeach
+      </table>
+    </div>
+    @endif
     <footer>
       <p class="tekstinnhold__forfattere"><strong>Skrevet av:</strong>
       @php $i = 0; @endphp
