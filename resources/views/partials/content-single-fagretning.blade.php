@@ -56,7 +56,7 @@ $query = new WP_Query([
 
     @php the_content() @endphp
 
-    @php $fagplan = get_field('fagplan') @endphp
+    
     @if($fagplan)
     <div class="fagplan">
       <table>
@@ -87,6 +87,37 @@ $query = new WP_Query([
       </table>
     </div>
     @endif
+
+    @if($jobber->have_posts())
+      <section class="listeseksjon">
+      <h3 class="listeseksjon__overskrift">Jobber</h3>
+      <div class="listeseksjon__wrapper">
+        @while($jobber->have_posts()) @php $jobber->the_post() @endphp
+        <div class="listeseksjon__element">
+          @if(has_post_thumbnail())
+            <div class="listeseksjon__element__bilde">
+              <a href="{{ get_the_permalink() }}">  
+                {!! get_the_post_thumbnail( null, 'logo', '' ) !!}
+              </a>
+            </div>
+          @endif
+          <div class="listeseksjon__element__tekst">
+            <a href="{{ get_the_permalink() }}">
+              <h4 class="listeseksjon__element__overskrift">
+                {{ get_the_title() }}
+              </h4>
+            </a>
+
+            {!! get_field('innledning') !!}
+          </div>
+        </div>
+        {{ get_the_title() }}
+        @endwhile
+      </div>
+      @php wp_reset_postdata() @endphp
+    </section>
+    @endif
+
     <footer>
       <p class="tekstinnhold__forfattere"><strong>Skrevet av:</strong>
       @php $i = 0; @endphp

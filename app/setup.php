@@ -72,6 +72,7 @@ add_action('after_setup_theme', function () {
      * Add custom image sizes
      */
     add_image_size( 'profilbilde', 265, 280, true );
+    add_image_size( 'logo', 280, 150, false );
 }, 20);
 
 /**
