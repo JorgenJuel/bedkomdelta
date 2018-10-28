@@ -12,5 +12,5 @@
       {!! get_field('innledning') !!}
     </div>
 
-    @php the_content() @endphp
+    {!! get_field('tekst') !!}
 </article>
