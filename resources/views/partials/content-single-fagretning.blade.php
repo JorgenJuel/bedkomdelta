@@ -111,7 +111,6 @@ $query = new WP_Query([
             {!! get_field('innledning') !!}
           </div>
         </div>
-        {{ get_the_title() }}
         @endwhile
       </div>
       @php wp_reset_postdata() @endphp

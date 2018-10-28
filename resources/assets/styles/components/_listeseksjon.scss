@@ -14,7 +14,6 @@
 
   &__element {
     border: 2px solid $gronn;
-    background: #f7f7f7;
     padding: 15px;
     box-sizing: border-box;
 
@@ -22,6 +21,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-bottom: 15px;
+    }
+
+    &__overskrift {
+      margin-top: 0;
+      margin-bottom: 10px;
     }
 
     a {
