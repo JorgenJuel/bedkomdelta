@@ -23,7 +23,7 @@ class SingleFagretning extends Controller
           'compare' => 'LIKE'
         ]
       ],
-      'posts_per_page' => 3,
+      'posts_per_page' => -1,
     ]);
     return $query;
   }
