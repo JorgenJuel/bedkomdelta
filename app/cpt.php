@@ -1,5 +1,84 @@
 <?php
 // Register Custom Post Type
+function bedrifter_cpt() {
+
+	$labels = array(
+		'name'                  => __( 'Bedrifter', 'sage' ),
+		'singular_name'         => __( 'Bedrift', 'sage' ),
+		'menu_name'             => __( 'Bedrifter', 'sage' ),
+		'name_admin_bar'        => __( 'Bedrifter', 'sage' ),
+		'add_new'								=> __( 'Legg til ny', 'sage' ),
+		'add_new_item'          => __( 'Legg til ny bedrift', 'sage' ),
+		'featured_image'        => __( 'Bedriftslogo', 'sage' ),
+		'set_featured_image'    => __( 'Bestem bedriftslogo', 'sage' ),
+		'remove_featured_image' => __( 'Fjern bedriftslogo', 'sage' ),
+		'use_featured_image'    => __( 'Bruk som bedriftslogo', 'sage' ),
+	);
+	$args = array(
+		'label'                 => __( 'Bedrift', 'sage' ),
+		'description'           => __( 'Bedrifter', 'sage' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'thumbnail', 'editor' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'menu_icon'             => 'dashicons-building',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+		'show_in_rest'					=> true,
+	);
+	register_post_type( 'bedrift', $args );
+
+}
+add_action( 'init', 'bedrifter_cpt', 0 );// Register Custom Post Type
+
+function studenter_cpt() {
+
+	$labels = array(
+		'name'                  => __( 'Studenter', 'sage' ),
+		'singular_name'         => __( 'Student', 'sage' ),
+		'menu_name'             => __( 'Studenter', 'sage' ),
+		'name_admin_bar'        => __( 'Studenter', 'sage' ),
+		'add_new'								=> __( 'Legg til ny', 'sage' ),
+		'add_new_item'          => __( 'Legg til ny student', 'sage' ),
+		'featured_image'        => __( 'Bilde', 'sage' ),
+		'set_featured_image'    => __( 'Bestem Bilde', 'sage' ),
+		'remove_featured_image' => __( 'Fjern Bilde', 'sage' ),
+		'use_featured_image'    => __( 'Bruk som Bilde', 'sage' ),
+	);
+	$args = array(
+		'label'                 => __( 'Student', 'sage' ),
+		'description'           => __( 'Studenter', 'sage' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'thumbnail', 'editor' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'menu_icon'             => 'dashicons-welcome-learn-more',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+		'show_in_rest'					=> true,
+	);
+	register_post_type( 'student', $args );
+
+}
+add_action( 'init', 'studenter_cpt', 0 );
+
+// Register Custom Post Type
 function jobber_cpt() {
 
 	$labels = array(
@@ -38,6 +117,7 @@ function jobber_cpt() {
 
 }
 add_action( 'init', 'jobber_cpt', 0 );
+
 
 // Register Custom Taxonomy
 function jobbtype_tax() {
