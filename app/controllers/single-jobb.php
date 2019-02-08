@@ -34,7 +34,7 @@ class SingleJobb extends Controller
     return null;
   }
 
-  public function bedriftslenke() {
+  public function bedrift() {
     $bedrift = get_field('bedrift');
     if($bedrift) {
       return get_the_title( $bedrift->ID );
