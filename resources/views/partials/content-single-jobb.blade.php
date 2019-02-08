@@ -13,6 +13,13 @@
       <div class="tekstinnhold__sideboks__logo">
         {!! $bedriftslogo !!}
       </div>
+
+      <dl>
+        <dt>Søknadsfrist:</dt>
+        <dd>{{ $soknadsfrist }}</dd>
+        <dt>Bedrift</dt>
+        <dd>{{ $bedrift }}</dd>
+      </dl>
     </aside>
     
 
