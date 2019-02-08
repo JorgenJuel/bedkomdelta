@@ -6,11 +6,14 @@
         </div>
       @endif
       <h1>{{ get_the_title() }}</h1>
-    </header>
 
-    <div class="tekstinnhold__intro">
-      {!! get_field('innledning') !!}
+      
+    </header>
+    <div class="tekstinnhold__tekst">
+      @php the_content() @endphp
     </div>
 
-    {!! get_field('tekst') !!}
+    <aside class="tekstinnhold__sideboks">
+      {!! $bedriftslogo !!}
+    </aside>
 </article>
