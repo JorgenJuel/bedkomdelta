@@ -32,8 +32,8 @@ class FrontPage extends Controller
   public function emner() {
     $query = new \WP_Query([
       'post_type' => 'emne',
-      'posts_per_page' => 8,
-      'order' => 'rand'
+      'posts_per_page' => 10,
+      'orderby' => 'rand'
     ]);
 
     $result = [];
