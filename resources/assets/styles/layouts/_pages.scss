@@ -122,3 +122,97 @@
   width: 100%;
   height: 400px;
 }
+
+.trippel {
+  @media (min-width: $sm) {
+    display: flex;
+    justify-content: space-between;
+
+    &__boks {
+      width: calc((100% / 3) - 20px);
+    }
+  }
+}
+
+.lenkeliste {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+
+  li {
+    border-bottom: 2px solid #e3e3e3;
+  }
+
+  &__lenke {
+    color: #303030;
+    text-decoration: none;
+    font-size: 1.125rem;
+    position: relative;
+    display: block;
+    padding: 10px 30px 10px 0;
+
+    &::after {
+      content: '\2192';
+      top: 10px;
+      right: 5px;
+      position: absolute;
+      transition: 0.2s all ease-in-out;
+    }
+
+    &:hover {
+      color: $gronn;
+
+      &::after {
+        right: 0;
+      }
+    }
+  }
+}
+
+.stillingslenke {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px 0;
+
+  &::after {
+    content: none;
+    display: none;
+  }
+
+  &__logo {
+    width: 50%;
+    display: block;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  &__tidspunkt {
+    width: 50%;
+    display: block;
+    padding-left: 20px;
+    box-sizing: border-box;
+    text-align: right;
+
+    &::before {
+      @extend .faclass;
+
+      display: inline-block;
+      content: "\f073";
+      color: inherit;
+      font-size: 0.875rem;
+      margin-right: 3px;
+      margin-top: 2px;
+      vertical-align: top;
+    }
+  }
+
+  &__tittel {
+    width: 100%;
+    display: block;
+    margin-top: 10px;
+  }
+}
