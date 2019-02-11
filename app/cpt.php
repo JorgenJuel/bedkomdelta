@@ -98,7 +98,7 @@ function jobber_cpt() {
 		'description'           => __( 'Jobber (både sommerjobber og fulltidsjobber)', 'sage' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'thumbnail', 'editor' ),
-		'taxonomies'						=> array( 'jobbtyper' ),
+		'taxonomies'						=> array( 'jobbtype' ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -108,7 +108,7 @@ function jobber_cpt() {
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,
-		'has_archive'           => true,
+		'has_archive'           => 'jobber',
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
@@ -136,6 +136,7 @@ function jobbtype_tax() {
 		'show_admin_column'          => true,
 		'show_in_nav_menus'          => true,
 		'show_tagcloud'              => true,
+		'show_in_rest'							 => true,
 	);
 	register_taxonomy( 'jobbtype', array( 'jobb' ), $args );
 

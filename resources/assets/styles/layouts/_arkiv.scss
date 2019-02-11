@@ -1,0 +1,81 @@
+.arkivinnhold {
+  font-size: 1.1rem;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.arkivtekst {
+  display: flex;
+  margin-bottom: 20px;
+
+  &__logo {
+    height: 100%;
+    width: 250px;
+    margin-right: 20px;
+    flex: 0 0 250px;
+    padding: 25px;
+    background: #f7f7f7;
+    border: #e3e3e3 3px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  &__header {
+    a {
+      color: inherit;
+    }
+  }
+
+  &__overskrift {
+    margin: 0;
+  }
+
+  &__meta {
+    color: #303030;
+
+    span {
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__innhold {
+    font-size: 1.1rem;
+  }
+
+  &__sted {
+    &::before {
+      @extend .fainline;
+
+      content: $sted;
+    }
+  }
+
+  &__frist {
+    &::before {
+      @extend .fainline;
+
+      content: $klokke;
+    }
+  }
+
+  &__bedrift {
+    &::before {
+      @extend .fainline;
+
+      content: $bygning;
+    }
+  }
+}

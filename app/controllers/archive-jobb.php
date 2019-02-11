@@ -4,9 +4,9 @@ namespace App;
 
 use Sober\Controller\Controller;
 
-class SingleJobb extends Controller
+class ArchiveJobb extends Controller
 {
-  public function bedriftslogo() {
+  public static function bedriftslogo() {
     $bedrift = get_field('bedrift');
     if($bedrift) {
       return get_the_post_thumbnail( $bedrift->ID, 'logo');
@@ -14,19 +14,19 @@ class SingleJobb extends Controller
     return null;
   }
 
-  public function soknadsfrist() {
+  public static function soknadsfrist() {
     $frist = get_field('soknadsfrist');
 
     return $frist;
   }
 
-  public function soknadslenke() {
+  public static function soknadslenke() {
     $lenke = get_field('lenke');
 
     return $lenke;
   }
 
-  public function bedriftslenke() {
+  public static function bedriftslenke() {
     $bedrift = get_field('bedrift');
     if($bedrift) {
       return get_field( 'nettside', $bedrift->ID);
@@ -34,7 +34,7 @@ class SingleJobb extends Controller
     return null;
   }
 
-  public function bedrift() {
+  public static function bedrift() {
     $bedrift = get_field('bedrift');
     if($bedrift) {
       return get_the_title( $bedrift->ID );
@@ -42,11 +42,11 @@ class SingleJobb extends Controller
     return null;
   }
 
-  public function sted() {
+  public static function sted() {
     return get_field('sted');
   }
 
-  public function stillingstype() {
+  public static function stillingstype() {
     $typer = get_the_terms( get_the_ID(), 'jobbtype' );
 
     if(is_array($typer)) {

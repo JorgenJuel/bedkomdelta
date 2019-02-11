@@ -14,12 +14,32 @@
         {!! $bedriftslogo !!}
       </div>
 
-      <dl>
-        <dt>Søknadsfrist:</dt>
-        <dd>{{ $soknadsfrist }}</dd>
-        <dt>Bedrift</dt>
-        <dd>{{ $bedrift }}</dd>
-      </dl>
+      <ul class="infoliste">
+
+        <li class="infoliste__punkt infoliste__punkt--bedrift">
+          Bedrift: 
+          {{ $bedrift }}
+        </li>
+
+        <li class="infoliste__punkt infoliste__punkt--klokke">
+          Søknadsfrist: 
+          {{ $soknadsfrist }}
+        </li>
+
+        <li class="infoliste__punkt infoliste__punkt--bedrift">
+          Arbeidssted:
+          {{ $sted }}
+        </li>
+
+        <li class="infoliste__punkt infoliste__punkt--bedrift">
+          Stillingstype
+          {{ $stillingstype }}
+        </li>
+      </ul>
+
+      <a href="{{ $soknadslenke }}">
+        Søk her
+      </a>
     </aside>
     
 
