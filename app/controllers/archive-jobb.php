@@ -55,4 +55,13 @@ class ArchiveJobb extends Controller
 
     return false;
   }
+
+  public function jobbtyper() {
+    $typer = get_terms([
+      'taxonomy' => 'jobbtype', 
+      'hide_empty' => true 
+    ]);
+
+    return $typer;
+  }
 }

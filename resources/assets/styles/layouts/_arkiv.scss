@@ -3,6 +3,17 @@
   max-width: 960px;
   margin: 0 auto;
   padding: 40px 20px;
+
+  &__sidebar {
+    color: #fff;
+    background: $gronn;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    h2 {
+      margin: 0 0 10px;
+    }
+  }
 }
 
 .arkivtekst {
@@ -76,6 +87,42 @@
       @extend .fainline;
 
       content: $bygning;
+    }
+  }
+}
+
+.filtermeny {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__gruppe {
+    width: 100%;
+
+    @media (min-width: $sm) {
+      width: calc((100% / 3) - 20px);
+      margin-right: 30px;
+
+      &:nth-child(3n+3) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__gruppenavn {
+    margin: 0 0 10px;
+  }
+
+  &__checkbox {
+    display: block;
+  }
+
+  &__knapper {
+    width: 100%;
+    margin: 10px 0 0;
+    text-align: right;
+
+    .knapp {
+      display: inline-block;
     }
   }
 }

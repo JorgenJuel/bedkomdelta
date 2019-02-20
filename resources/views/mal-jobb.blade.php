@@ -8,7 +8,7 @@
   @while(have_posts()) @php the_post() @endphp
   <div class="hovedinnhold">
     <div class="container">
-      @include('partials.studieretninger')
+      @include('partials.list-view')
     </div>
   </div>
   @php /*

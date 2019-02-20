@@ -7,4 +7,16 @@
   color: #fff;
   border: none;
   font-weight: bold;
+  cursor: pointer;
+
+  &--lenke {
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+  }
+
+  &--hvit {
+    background: #fff;
+    color: $gronn;
+  }
 }
