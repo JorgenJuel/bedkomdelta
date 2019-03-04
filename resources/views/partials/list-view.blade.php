@@ -40,6 +40,7 @@
       </div>
 
       <div class="trippel__boks">
+        {{--
         <h2>Tilfeldige Emner</h2>
         <ul class="lenkeliste">
           @foreach($emner as $emne)
@@ -53,5 +54,6 @@
 
         <a href="{{ get_post_type_archive_link( 'emner' ) }}" class="knapp knapp--lenke">Se alle emnene
         </a>
+         --}}
       </div>
     </div>

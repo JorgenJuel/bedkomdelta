@@ -9,6 +9,8 @@
   @endif
 
   <div class="arkivinnhold">
+
+    {{--
     <aside class="arkivinnhold__sidebar">
       <h2>Filtrer resultatet</h2>
 
@@ -27,6 +29,7 @@
         </div>
       </form>
     </aside>
+    --}}
     <div class="arkivinnhold__liste">
       @while (have_posts()) @php the_post() @endphp
         @include('partials.content-'.get_post_type())

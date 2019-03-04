@@ -29,7 +29,7 @@ class ArchiveJobb extends Controller
   public static function bedriftslenke() {
     $bedrift = get_field('bedrift');
     if($bedrift) {
-      return get_field( 'nettside', $bedrift->ID);
+      return get_the_permalink($bedrift->ID);
     }
     return null;
   }
