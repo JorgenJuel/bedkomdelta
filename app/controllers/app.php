@@ -12,7 +12,8 @@ class App extends Controller
     }
 
     public function vis_studentmeny() {
-      $rightPage = get_field('vis_undermeny') || is_post_type_archive( ['jobb', 'bedrift', 'student', 'emne'] );
+      $rightPage = get_field('vis_undermeny') || is_post_type_archive( ['jobb', 'bedrift', 'student', 'emne'] ) ||
+          is_singular([ 'jobb', 'bedrift', 'student', 'emne', 'fagretning' ]);
       return $rightPage && has_nav_menu('studentsider');
     }
 
