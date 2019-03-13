@@ -1,0 +1,39 @@
+.boksnavigasjon {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: $sm) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__punkt {
+    margin-bottom: 20px;
+
+    @media (min-width: $sm) {
+      margin: 0 10px 20px;
+      width: calc(100% / 3 - 20px);
+      text-align: center;
+    }
+  }
+
+  &__lenke {
+    display: block;
+    background: $gronn;
+    padding: 15px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+
+    @media (min-width: $sm) {
+      padding: 25px;
+    }
+
+    &:hover {
+      background: $lysgronn;
+      text-decoration: underline;
+    }
+  }
+}

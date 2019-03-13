@@ -11,6 +11,25 @@
   @extend .holder;
 
   color: #000;
+
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+.halvside {
+  @include breakpoint($sm) {
+    width: 50%;
+    width: calc(50% - 20px);
+    margin-right: 20px;
+    float: left;
+
+    &:nth-child(2n) {
+      margin-left: 20px;
+    }
+  }
 }
 
 .navigeringsknapper {

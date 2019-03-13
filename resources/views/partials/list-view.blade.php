@@ -4,12 +4,15 @@
         <h2>Fagretninger</h2>
 
         <ul class="lenkeliste">
-          @foreach($fagretninger as $fagretning)
-            <li>
-              <a href="{{ $fagretning['lenke'] }}" class="lenkeliste__lenke">
-                {!! $fagretning['tittel']; !!}
-              </a>
-            </li>
+          @foreach($fagretninger as $fagtype => $fagretninger_i_type)
+            <li><strong>{{$fagtype}}</strong></li>
+            @foreach($fagretninger_i_type as $fagretning)
+              <li>
+                <a href="{{ $fagretning['lenke'] }}" class="lenkeliste__lenke">
+                  {!! $fagretning['tittel']; !!}
+                </a>
+              </li>
+            @endforeach
           @endforeach
         </ul>
       </div>

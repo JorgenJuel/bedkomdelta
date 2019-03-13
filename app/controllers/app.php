@@ -11,6 +11,11 @@ class App extends Controller
         return get_bloginfo('name');
     }
 
+    public function vis_studentmeny() {
+      $rightPage = get_field('vis_undermeny') || is_post_type_archive( ['jobb', 'bedrift', 'student', 'emne'] );
+      return $rightPage && has_nav_menu('studentsider');
+    }
+
     public static function title()
     {
         if (is_home()) {
@@ -18,6 +23,15 @@ class App extends Controller
                 return get_the_title($home);
             }
             return __('Latest Posts', 'sage');
+        }
+        if (is_post_type_archive( 'student' )) {
+          return __('Tidligere studenter', 'sage');
+        }
+        if (is_post_type_archive( 'bedrift' )) {
+          return __('Bedrifter', 'sage');
+        }
+        if (is_post_type_archive( 'emne' )) {
+          return __('Emner', 'sage');
         }
         if (is_archive()) {
             return get_the_archive_title();
@@ -54,15 +68,24 @@ class App extends Controller
       'posts_per_page' => -1
     ]);
 
+
     $result = [];
+
+    $fagtyper = get_terms('fagtype');
+    foreach ($fagtyper as $fagtype) {
+      $result[$fagtype->name] = [];
+    }
 
     while($query->have_posts()){
       $query->the_post();
 
-      array_push($result, [
-        'tittel' => get_the_title(),
-        'lenke' => get_the_permalink()
-      ]);
+      $terms = get_the_terms(get_the_ID(), 'fagtype');
+      if(is_array($terms)){
+        array_push($result[$terms[0]->name], [
+          'tittel' => get_the_title(),
+          'lenke' => get_the_permalink()
+        ]);
+      }
     }
 
     wp_reset_postdata();

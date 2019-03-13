@@ -140,3 +140,15 @@ function display_sidebar()
     isset($display) || $display = apply_filters('sage/display_sidebar', false);
     return $display;
 }
+
+add_action( 'pre_get_posts', function ($query){
+    if(is_post_type_archive( 'emne' )):
+     //If you wanted it for the archive of a custom post type use: is_post_type_archive( $post_type )
+       //Set the order ASC or DESC
+       $query->set( 'order', 'ASC' );
+       //Set the orderby
+       $query->set( 'orderby', 'title' );
+       $query->set( 'posts_per_page', -1 );
+    endif;    
+});
+    

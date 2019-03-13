@@ -1,0 +1,31 @@
+.linjeforklaring {
+  header {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 10px;
+
+    img {
+      width: 100px;
+      height: auto;
+      display: block;
+    }
+
+    h3 {
+      margin-left: 15px;
+    }
+  }
+
+  &__lenke {
+    @extend .knapp;
+
+    display: inline-block;
+    float: right;
+    font-size: 16px;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}

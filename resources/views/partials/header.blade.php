@@ -16,4 +16,8 @@ BedKom<br>Delta</a>
     	<span class="mobilmeny__linje"></span>
     </button>
   </div>
+
+  @if( $vis_studentmeny )
+    {!! bem_menu('studentsider', 'undermeny') !!}
+  @endif
 </header>
